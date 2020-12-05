@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * @see ToolBarController
@@ -58,42 +60,52 @@ public class ToolBarController {
         label.setText(String.valueOf(ShapeAttribute.getSize()));
         StrokeCP.setValue(ShapeAttribute.getStrokeColor());
         FillCP.setValue(ShapeAttribute.getFillColor());
+        setIcon("icons/pen.png",PenBtn);
         PenBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("PEN");
             System.out.println(ShapeAttribute.getTool());
         });
+        setIcon("icons/linear.png",LineBtn);
         LineBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("LINE");
             System.out.println(ShapeAttribute.getTool());
         });
+        setIcon("icons/elliptic.png",OvalBtn);
         OvalBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("OVAL");
             System.out.println(ShapeAttribute.getTool());
         });
+        setIcon("icons/rectangular.png",RectBtn);
         RectBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("RECT");
             System.out.println(ShapeAttribute.getTool());
         });
+        setIcon("icons/move.png",MoveBtn);
         MoveBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("MOVE");
             System.out.println(ShapeAttribute.getTool());
         });
+        setIcon("icons/eraser.png",RubberBtn);
         RubberBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("RUBBER");
             System.out.println(ShapeAttribute.getTool());
         });
+        setIcon("icons/filling.png",BarrelBtn);
         BarrelBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("BARREL");
             System.out.println(ShapeAttribute.getTool());
         });
+        setIcon("icons/curve.png",CurveBtn);
         CurveBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("CURVE");
             System.out.println(ShapeAttribute.getTool());
         });
+        setIcon("icons/text.png",TextBtn);
         TextBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("TEXT");
             System.out.println(ShapeAttribute.getTool());
         });
+        setIcon("icons/circular.png",CircleBtn);
         CircleBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("CIRCLE");
             System.out.println(ShapeAttribute.getTool());
@@ -114,5 +126,12 @@ public class ToolBarController {
         this.main = mainApp;
     }
 
+    private void setIcon(String path,Button btn) {
+        Image image = new Image(path);
+        ImageView imageView = new ImageView(image);
+        imageView.setFitWidth(44);
+        imageView.setFitHeight(47);
+        btn.setGraphic(imageView);
+    }
 
 }
