@@ -1,6 +1,6 @@
 package Toolbar;
 
-import Main.Main;
+import Main.App;
 import Main.ShapeAttribute;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -49,7 +49,7 @@ public class ToolBarController {
     private Button CircleBtn;
 
 
-    private Main main;
+    private App app;
 
     public ToolBarController() {
     }
@@ -122,8 +122,8 @@ public class ToolBarController {
         });
     }
 
-    public void setMainApp(Main mainApp) {
-        this.main = mainApp;
+    public void setMainApp(App appApp) {
+        this.app = appApp;
     }
 
     private void setIcon(String path,Button btn) {

@@ -26,7 +26,7 @@ public class Controller {
     @FXML
     private Label label;
 
-    private Main main;
+    private App app;
     private double startX, startY;
     private double endX, endY;
     private boolean first = true;
@@ -71,8 +71,8 @@ public class Controller {
         label.setFont(Font.font(15));
     }
 
-    public void setMainApp(Main mainApp) {
-        this.main = mainApp;
+    public void setMainApp(App appApp) {
+        this.app = appApp;
     }
 
     @FXML

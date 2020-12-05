@@ -4,7 +4,7 @@ import File.FileExport;
 import File.FileInport;
 import File.FileOpen;
 import File.FileSave;
-import Main.Main;
+import Main.App;
 import UndoManager.RecordStack;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -19,13 +19,13 @@ import javafx.stage.StageStyle;
  * @author 眭永熙
  */
 public class MenuBarController {
-    private Main main;
+    private App app;
 
     public MenuBarController() {
     }
 
-    public void setMainApp(Main mainApp) {
-        this.main = mainApp;
+    public void setMainApp(App appApp) {
+        this.app = appApp;
     }
 
     @FXML
@@ -49,22 +49,22 @@ public class MenuBarController {
     @FXML
     private void initialize() {
         saveItem.setOnAction(e -> {
-            FileSave fileSave = new FileSave(main.getGroup());
+            FileSave fileSave = new FileSave(app.getGroup());
             fileSave.save();
         });
         saveItem.setAccelerator(KeyCombination.keyCombination("Ctrl+s"));
         openItem.setOnAction(e -> {
-            FileOpen fileOpen = new FileOpen(main.getGroup());
+            FileOpen fileOpen = new FileOpen(app.getGroup());
             fileOpen.open();
         });
         openItem.setAccelerator(KeyCombination.keyCombination("Ctrl+o"));
         exportItem.setOnAction(e -> {
-            FileExport fileExport = new FileExport(main.getGroup());
+            FileExport fileExport = new FileExport(app.getGroup());
             fileExport.export();
         });
         exportItem.setAccelerator(KeyCombination.keyCombination("Ctrl+Shift+s"));
         inportItem.setOnAction(e -> {
-            FileInport fileInport = new FileInport(main.getGroup());
+            FileInport fileInport = new FileInport(app.getGroup());
             fileInport.inport();
         });
         inportItem.setAccelerator(KeyCombination.keyCombination("Ctrl+Shift+o"));
