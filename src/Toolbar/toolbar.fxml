@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity"
+      minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="626.0" prefWidth="186.0" spacing="50.0"
+      style="-fx-background-color: #555a55;" xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="Toolbar.ToolBarController">
+    <children>
+        <TilePane alignment="CENTER" hgap="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                  prefHeight="273.0" prefWidth="186.0" vgap="20.0">
+            <children>
+                <Button fx:id="PenBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0" text="PEN">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="LineBtn" layoutX="82.0" layoutY="86.0" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0"
+                        text="LINE">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="OvalBtn" layoutX="114.0" layoutY="86.0" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0"
+                        text="OVAL">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="CircleBtn" layoutX="44.0" layoutY="77.0" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0"
+                        text="CIRCLE">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="RectBtn" layoutX="146.0" layoutY="86.0" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0"
+                        text="RECTANGLE">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="CurveBtn" layoutX="84.0" layoutY="215.0" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0"
+                        text="CURVE">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="RubberBtn" layoutX="114.0" layoutY="120.0" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0"
+                        text="RUBBER">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="BarrelBtn" layoutX="47.0" layoutY="168.0" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0"
+                        text="BARREL">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="TextBtn" layoutX="121.0" layoutY="215.0" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0"
+                        text="TEXT">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+                <Button fx:id="MoveBtn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                        mnemonicParsing="false" prefHeight="47.0" prefWidth="44.0" text="MOVE">
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND"/>
+                    </cursor>
+                </Button>
+            </children>
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+            <effect>
+                <DropShadow/>
+            </effect>
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+            <padding>
+                <Insets bottom="20.0"/>
+            </padding>
+        </TilePane>
+        <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="163.0">
+            <children>
+                <Label prefHeight="28.0" prefWidth="41.0" text="Size" textAlignment="CENTER" textFill="#f8f6f6">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <input>
+                                <Reflection/>
+                            </input>
+                        </DropShadow>
+                    </effect>
+                </Label>
+                <Slider fx:id="SizeSlider" majorTickUnit="2.0" max="20.0" maxHeight="1.7976931348623157E308"
+                        maxWidth="1.7976931348623157E308" min="1.0" minorTickCount="1" prefHeight="43.0"
+                        prefWidth="108.0" value="1.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                    <effect>
+                        <DropShadow/>
+                    </effect>
+                </Slider>
+                <Label fx:id="label" prefHeight="15.0" prefWidth="46.0" text="Label" textFill="#fffdfd">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <input>
+                                <Reflection/>
+                            </input>
+                        </DropShadow>
+                    </effect>
+                </Label>
+            </children>
+            <opaqueInsets>
+                <Insets left="20.0" right="20.0"/>
+            </opaqueInsets>
+        </HBox>
+        <HBox prefHeight="33.0" prefWidth="191.0">
+            <children>
+                <Label prefHeight="18.0" prefWidth="67.0" text="Stroke" textFill="#ebe9e9">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <input>
+                                <Reflection/>
+                            </input>
+                        </DropShadow>
+                    </effect>
+                </Label>
+                <ColorPicker fx:id="StrokeCP" editable="true">
+                    <opaqueInsets>
+                        <Insets left="30.0"/>
+                    </opaqueInsets>
+                    <effect>
+                        <DropShadow/>
+                    </effect>
+                </ColorPicker>
+            </children>
+            <opaqueInsets>
+                <Insets left="20.0" right="20.0"/>
+            </opaqueInsets>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="439.0" prefHeight="33.0" prefWidth="191.0">
+            <children>
+                <Label prefHeight="24.0" prefWidth="66.0" text="Fill" textFill="#eee8e8">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                    <effect>
+                        <DropShadow>
+                            <input>
+                                <Reflection/>
+                            </input>
+                        </DropShadow>
+                    </effect>
+                </Label>
+                <ColorPicker fx:id="FillCP" editable="true">
+                    <opaqueInsets>
+                        <Insets left="30.0"/>
+                    </opaqueInsets>
+                    <effect>
+                        <DropShadow/>
+                    </effect>
+                </ColorPicker>
+            </children>
+            <opaqueInsets>
+                <Insets left="20.0" right="20.0"/>
+            </opaqueInsets>
+        </HBox>
+    </children>
+    <opaqueInsets>
+        <Insets bottom="20.0" top="20.0"/>
+    </opaqueInsets>
+    <effect>
+        <Lighting diffuseConstant="2.0" specularConstant="1.37" specularExponent="25.12" surfaceScale="0.68">
+            <bumpInput>
+                <Shadow/>
+            </bumpInput>
+            <light>
+                <Light.Distant/>
+            </light>
+        </Lighting>
+    </effect>
+</VBox>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+
+<MenuBar prefHeight="15.0" prefWidth="192.0" xmlns="http://javafx.com/javafx/8.0.171"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menubar.MenuBarController">
+    <menus>
+        <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem fx:id="saveItem" mnemonicParsing="false" text="Save"/>
+                <MenuItem fx:id="openItem" mnemonicParsing="false" text="Open"/>
+                <MenuItem fx:id="exportItem" mnemonicParsing="false" text="Export"/>
+                <MenuItem fx:id="inportItem" mnemonicParsing="false" text="Inport"/>
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                <MenuItem fx:id="undoItem" mnemonicParsing="false" text="Undo"/>
+                <MenuItem fx:id="clearItem" mnemonicParsing="false" text="Clear"/>
+            </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <items>
+                <MenuItem fx:id="aboutItem" mnemonicParsing="false" text="About"/>
+            </items>
+        </Menu>
+    </menus>
+    <effect>
+        <Lighting bumpInput="$null" diffuseConstant="1.56" specularConstant="0.72" specularExponent="38.14"
+                  surfaceScale="1.03">
+            <light>
+                <Light.Distant/>
+            </light>
+        </Lighting>
+    </effect>
+</MenuBar>

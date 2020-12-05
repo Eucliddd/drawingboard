@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="738.0"
+            prefWidth="920.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controller">
+    <center>
+        <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="702.0"
+                    prefWidth="765.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+            <center>
+                <Group fx:id="group" onMouseDragged="#canvasOnMouseDragged" onMouseMoved="#onMouseMoved"
+                       onMousePressed="#canvasOnMousePressed" onMouseReleased="#canvasOnMouseReleased"/>
+            </center>
+            <bottom>
+                <Label fx:id="label" prefHeight="36.0" prefWidth="109.0" text="Label" textFill="WHITE"
+                       BorderPane.alignment="BOTTOM_RIGHT">
+                    <effect>
+                        <DropShadow/>
+                    </effect>
+                </Label>
+            </bottom>
+        </BorderPane>
+    </center>
+</BorderPane>
