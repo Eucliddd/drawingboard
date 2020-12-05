@@ -42,8 +42,8 @@ public class MenuBarController {
     private MenuItem clearItem;
     @FXML
     private MenuItem aboutItem;
-    @FXML
-    private MenuItem newItem;
+/*    @FXML
+    private MenuItem newItem;*/
 
 
     @FXML
@@ -68,9 +68,7 @@ public class MenuBarController {
             fileInport.inport();
         });
         inportItem.setAccelerator(KeyCombination.keyCombination("Ctrl+Shift+o"));
-        undoItem.setOnAction(e -> {
-            RecordStack.undo();
-        });
+        undoItem.setOnAction(e -> RecordStack.undo());
         undoItem.setAccelerator(KeyCombination.keyCombination("Ctrl+z"));
         clearItem.setOnAction(e -> {
             while (RecordStack.undo()) ;
