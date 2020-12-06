@@ -60,52 +60,52 @@ public class ToolBarController {
         label.setText(String.valueOf(ShapeAttribute.getSize()));
         StrokeCP.setValue(ShapeAttribute.getStrokeColor());
         FillCP.setValue(ShapeAttribute.getFillColor());
-        setIcon("icons/pen.png",PenBtn);
+        setIcon("/pen.png",PenBtn);
         PenBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("PEN");
             System.out.println(ShapeAttribute.getTool());
         });
-        setIcon("icons/linear.png",LineBtn);
+        setIcon("/linear.png",LineBtn);
         LineBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("LINE");
             System.out.println(ShapeAttribute.getTool());
         });
-        setIcon("icons/elliptic.png",OvalBtn);
+        setIcon("/elliptic.png",OvalBtn);
         OvalBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("OVAL");
             System.out.println(ShapeAttribute.getTool());
         });
-        setIcon("icons/rectangular.png",RectBtn);
+        setIcon("/rectangular.png",RectBtn);
         RectBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("RECT");
             System.out.println(ShapeAttribute.getTool());
         });
-        setIcon("icons/move.png",MoveBtn);
+        setIcon("/move.png",MoveBtn);
         MoveBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("MOVE");
             System.out.println(ShapeAttribute.getTool());
         });
-        setIcon("icons/eraser.png",RubberBtn);
+        setIcon("/eraser.png",RubberBtn);
         RubberBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("RUBBER");
             System.out.println(ShapeAttribute.getTool());
         });
-        setIcon("icons/filling.png",BarrelBtn);
+        setIcon("/filling.png",BarrelBtn);
         BarrelBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("BARREL");
             System.out.println(ShapeAttribute.getTool());
         });
-        setIcon("icons/curve.png",CurveBtn);
+        setIcon("/curve.png",CurveBtn);
         CurveBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("CURVE");
             System.out.println(ShapeAttribute.getTool());
         });
-        setIcon("icons/text.png",TextBtn);
+        setIcon("/text.png",TextBtn);
         TextBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("TEXT");
             System.out.println(ShapeAttribute.getTool());
         });
-        setIcon("icons/circular.png",CircleBtn);
+        setIcon("/circular.png",CircleBtn);
         CircleBtn.setOnMouseClicked((e) -> {
             ShapeAttribute.setTool("CIRCLE");
             System.out.println(ShapeAttribute.getTool());
@@ -114,12 +114,8 @@ public class ToolBarController {
             ShapeAttribute.setSize(SizeSlider.getValue());
             label.setText(String.valueOf(SizeSlider.getValue()));
         });
-        StrokeCP.setOnAction((ActionEvent e) -> {
-            ShapeAttribute.setStrokeColor(StrokeCP.getValue());
-        });
-        FillCP.setOnAction((ActionEvent e) -> {
-            ShapeAttribute.setFillColor(FillCP.getValue());
-        });
+        StrokeCP.setOnAction((ActionEvent e) -> ShapeAttribute.setStrokeColor(StrokeCP.getValue()));
+        FillCP.setOnAction((ActionEvent e) -> ShapeAttribute.setFillColor(FillCP.getValue()));
     }
 
     public void setMainApp(App appApp) {

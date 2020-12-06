@@ -12,6 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * @see App
@@ -40,7 +41,9 @@ public class App extends Application {
     public void initRootLayout() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("mainstage.fxml"));
+//            String path = System.getProperty("user.dir");
+//            URL fxmlUrl = new URL("file:"+path+"/resources/fxml/mainstage.fxml");
+            loader.setLocation(getClass().getClassLoader().getResource("mainstage.fxml"));
             Parent root = loader.load();
             primaryStage.setTitle("Drawing Board");
             primaryStage.setScene(new Scene(root, 1024, 768));
@@ -49,14 +52,16 @@ public class App extends Application {
             controller.setMainApp(this);
 
             loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../toolbar/toolbar.fxml"));
+//            fxmlUrl = new URL("file:"+path+"/resources/fxml/toolbar.fxml");
+            loader.setLocation(getClass().getClassLoader().getResource("toolbar.fxml"));
             root = loader.load();
             rootLayout.setLeft(root);
             ToolBarController TBController = loader.getController();
             TBController.setMainApp(this);
 
             loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../menubar/menubar.fxml"));
+//            fxmlUrl = new URL("file:"+path+"/resources/fxml/menubar.fxml");
+            loader.setLocation(getClass().getClassLoader().getResource("menubar.fxml"));
             root = loader.load();
             rootLayout.setTop(root);
             MenuBarController MNController = loader.getController();
