@@ -177,9 +177,9 @@ public class Controller {
                     if (event.getButton().equals(MouseButton.SECONDARY)) {
                         rotate = true;
                     }
-                    if (!group.getChildren().contains(text))
+//                    if (!group.getChildren().contains(text))
                         for (Node e : group.getChildren()) {
-                            if (e.getClass().equals(MyText.class) && ((MyText) e).isFocused())
+                            if (e.getClass().equals(MyText.class) && e.isFocused())
                                 text = (MyText) e;
                         }
                     text.paint(event.getX(), event.getY(), rotate);
