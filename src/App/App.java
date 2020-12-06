@@ -1,4 +1,4 @@
-package Main;
+package App;
 
 import Menubar.MenuBarController;
 import Toolbar.ToolBarController;

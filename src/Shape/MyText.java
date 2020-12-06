@@ -1,6 +1,6 @@
 package Shape;
 
-import Main.ShapeAttribute;
+import App.ShapeAttribute;
 import UndoManager.RecordStack;
 import javafx.scene.Node;
 import javafx.scene.input.KeyCode;

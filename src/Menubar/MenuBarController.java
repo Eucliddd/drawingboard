@@ -4,7 +4,7 @@ import File.FileExport;
 import File.FileInport;
 import File.FileOpen;
 import File.FileSave;
-import Main.App;
+import App.App;
 import UndoManager.RecordStack;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

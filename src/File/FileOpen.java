@@ -1,6 +1,6 @@
 package File;
 
-import Main.ShapeAttribute;
+import App.ShapeAttribute;
 import Shape.*;
 import UndoManager.RecordStack;
 import javafx.scene.Group;

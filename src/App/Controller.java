@@ -1,4 +1,4 @@
-package Main;
+package App;
 
 import Shape.*;
 import UndoManager.RecordStack;

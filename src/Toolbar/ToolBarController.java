@@ -1,7 +1,7 @@
 package Toolbar;
 
-import Main.App;
-import Main.ShapeAttribute;
+import App.App;
+import App.ShapeAttribute;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
