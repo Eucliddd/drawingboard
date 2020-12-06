@@ -136,7 +136,7 @@ public class MenuBarController {
             aboutAlert.setTitle("help");
             aboutAlert.setHeaderText("如何使用");
             aboutAlert.initStyle(StageStyle.UTILITY);
-            File file=new File("src/helptext.txt");
+            File file=new File(getClass().getClassLoader().getResource("helptext.txt").getPath());
             StringBuilder text= new StringBuilder();
             try {
                 BufferedReader br = new BufferedReader(new FileReader(file));
