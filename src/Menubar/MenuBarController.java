@@ -5,17 +5,20 @@ import File.FileInport;
 import File.FileOpen;
 import File.FileSave;
 import App.App;
+import Shape.MyCanvas;
 import UndoManager.RecordStack;
 import javafx.fxml.FXML;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
-
+import App.ShapeAttribute;
 /**
  * @see MenuBarController
  * 菜单栏控制器
- * @version 1.0
+ * @version 2.0
  * @author 眭永熙
  */
 public class MenuBarController {
@@ -72,6 +75,25 @@ public class MenuBarController {
         undoItem.setAccelerator(KeyCombination.keyCombination("Ctrl+z"));
         clearItem.setOnAction(e -> {
             while (RecordStack.undo()) ;
+            if(app.getGroup().getChildren().size()>1){
+                app.getGroup().getChildren().clear();
+                MyCanvas canvas = new MyCanvas(ShapeAttribute.CANVAS_WIDTH, ShapeAttribute.CANVAS_HEIGHT);
+                GraphicsContext gc = canvas.getGraphicsContext2D();
+                gc.setFill(Color.WHITE);
+                gc.fillRect(0, 0, ShapeAttribute.CANVAS_WIDTH, ShapeAttribute.CANVAS_HEIGHT);
+                gc.restore();
+                canvas.setOnMouseClicked((ne) -> {
+                    if (ShapeAttribute.getTool().equals("BARREL")) {
+                        MyCanvas c = (MyCanvas) ne.getSource();
+                        RecordStack.nodeChange(c, c.clone());
+                        GraphicsContext ngc = (c.getGraphicsContext2D());
+                        ngc.setFill(ShapeAttribute.getFillColor());
+                        ngc.fillRect(0, 0, ShapeAttribute.CANVAS_WIDTH, ShapeAttribute.CANVAS_HEIGHT);
+                        ngc.restore();
+                    }
+                });
+                app.getGroup().getChildren().addAll(canvas);
+            }
         });
         clearItem.setAccelerator(KeyCombination.keyCombination("Ctrl+F5"));
         aboutItem.setOnAction(e -> {
@@ -82,18 +104,6 @@ public class MenuBarController {
             aboutAlert.setContentText("东北大学：眭永熙 20184411， 刘荣江 20184539");
             aboutAlert.showAndWait();
         });
-/*        newItem.setOnAction(e->{
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        new Main().start(new Stage());
-                    } catch (Exception exception) {
-                        exception.printStackTrace();
-                    }
-                }
-            });
-        });*/
     }
 
 }
