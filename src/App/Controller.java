@@ -20,34 +20,70 @@ import javafx.scene.text.Font;
  */
 public class Controller {
 
-
+    /**
+     * javafx group，用于存放图形
+     */
     @FXML
     private Group group;
+    /**
+     * 界面右下方文本
+     */
     @FXML
     private Label label;
 
     private App app;
+    /**
+     * 鼠标按下的坐标
+     */
     private double startX, startY;
+    /**
+     * 鼠标松开的坐标
+     */
     private double endX, endY;
     private boolean first = true;
+    /**
+     * 画布画图器
+     */
     private GraphicsContext gc;
+    /**
+     * 当前画布
+     */
     private MyCanvas canvas;
+    /**
+     * 当前自由画笔
+     */
     private MyPath path;
+    /**
+     * 当前直线
+     */
     private MyLine line;
+    /**
+     * 当前矩形
+     */
     private MyRectangle rectangle;
+    /**
+     * 当前椭圆
+     */
     private MyEllipse ellipse;
+    /**
+     * 当前曲线
+     */
     private MyQuadCurve quadCurve;
+    /**
+     * 当前文本
+     */
     private MyText text;
-    private Node component;
     /*    private MyText cloneText;*/
 
     public Controller() {
     }
 
     public void setComponent(Node n) {
-        component = n;
     }
 
+    /**
+     * 初始化画图器，设置背景画布
+     */
     @FXML
     private void initialize() {
         if (canvas == null) {
@@ -71,10 +107,16 @@ public class Controller {
         label.setFont(Font.font(15));
     }
 
+
     public void setMainApp(App appApp) {
         this.app = appApp;
     }
 
+    /**
+     * 鼠标点击响应器
+     * 点击后在当前点击位置画图
+     * @param event 鼠标事件
+     */
     @FXML
     private void canvasOnMousePressed(MouseEvent event) {
 
@@ -148,7 +190,10 @@ public class Controller {
         }
     }
 
-
+    /**
+     * 鼠标拖曳响应器
+     * @param event 鼠标事件
+     */
     @FXML
     private void canvasOnMouseDragged(MouseEvent event) {
         //path.getElements().add(new LineTo(event.getX(), event.getY()));
@@ -194,6 +239,10 @@ public class Controller {
         }
     }
 
+    /**
+     * 鼠标释放响应器
+     * @param event 鼠标事件
+     */
     @FXML
     private void canvasOnMouseReleased(MouseEvent event) {
         if (!first) {
@@ -207,11 +256,19 @@ public class Controller {
         }*/
     }
 
+    /**
+     * 鼠标移动响应器
+     * @param event 鼠标事件
+     */
     @FXML
     private void onMouseMoved(MouseEvent event) {
         label.setText(String.format("%.1f, %.1fpx ", event.getX(), event.getY()));
     }
 
+    /**
+     * 获取组
+     * @return 获取{@link #group}
+     */
     public Group getGroup() {
         return group;
     }

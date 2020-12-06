@@ -18,6 +18,9 @@ import java.io.FileReader;
  * @author 眭永熙
  */
 public class FileOpen {
+    /**
+     * 画图板的图形组
+     */
     private Group openingGroup;
 
     public FileOpen() {
@@ -27,6 +30,10 @@ public class FileOpen {
         openingGroup = gp;
     }
 
+    /**
+     * 设置组
+     * @param gp 设置{@link #openingGroup}
+     */
     public void setGroup(Group gp) {
         openingGroup = gp;
     }

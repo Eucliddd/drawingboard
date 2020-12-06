@@ -19,6 +19,10 @@ import static javafx.scene.Cursor.MOVE;
 public class MyEllipse extends Ellipse implements Cloneable {
     private double fromX, fromY, lastTranslateX, lastTranslateY;
 
+    /**
+     * 无参构造函数
+     * 设置图形的事件响应器
+     */
     public MyEllipse() {
         super();
         setCursor(HAND);
@@ -78,6 +82,10 @@ public class MyEllipse extends Ellipse implements Cloneable {
         setRadiusY(Math.abs(y1 - y2) / 2);
     }
 
+    /**
+     * 重载克隆函数
+     * @return 当前Node的克隆
+     */
     @Override
     public Node clone() {
         MyEllipse myClone = new MyEllipse();
@@ -93,7 +101,10 @@ public class MyEllipse extends Ellipse implements Cloneable {
         return myClone;
     }
 
-
+    /**
+     * 重载toString函数，用于保存信息持久化
+     * @return 属性信息
+     */
     @Override
     public String toString() {
         return new StringBuilder("Ellipse")

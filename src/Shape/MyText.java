@@ -20,9 +20,18 @@ import static javafx.scene.Cursor.*;
  */
 public class MyText extends Text implements Cloneable {
     private double fromX, fromY, lastTranslateX, lastTranslateY;
+    /**
+     * {@link #isTexting()}
+     */
     private static boolean texting = false;
     private static final double OFFSET = 15;
-
+    /**
+     * 构造函数
+     * 设置图形的事件响应器
+     * @param s 文本
+     * @param x 初始位置x
+     * @param y 初始位置y
+     */
     public MyText(double x, double y, String s) {
         super(x, y, s);
         setCursor(HAND);
@@ -91,6 +100,10 @@ public class MyText extends Text implements Cloneable {
         });
     }
 
+    /**
+     * 是否正在输入
+     * @return boolena
+     */
     public static boolean isTexting() {
         return texting;
     }
@@ -114,7 +127,10 @@ public class MyText extends Text implements Cloneable {
             setWrappingWidth(deltaX);
         }
     }
-
+    /**
+     * 重载克隆函数
+     * @return 当前Node的克隆
+     */
     @Override
     public Node clone() {
         MyText mt = new MyText(getX(), getY(), getText());
@@ -126,7 +142,10 @@ public class MyText extends Text implements Cloneable {
         mt.setFill(getFill());
         return mt;
     }
-
+    /**
+     * 重载toString函数，用于保存信息持久化
+     * @return 属性信息
+     */
     @Override
     public String toString() {
         return new StringBuilder("Text")

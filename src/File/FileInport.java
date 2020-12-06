@@ -20,6 +20,9 @@ import java.io.FileInputStream;
 
 
 public class FileInport {
+    /**
+     * 画图板的图形组
+     */
     private Group openingGroup;
 
     public FileInport() {
@@ -29,6 +32,10 @@ public class FileInport {
         openingGroup = gp;
     }
 
+    /**
+     * 设置组
+     * @param gp 设置{@link #openingGroup}
+     */
     public void setGroup(Group gp) {
         openingGroup = gp;
     }

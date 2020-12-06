@@ -20,6 +20,10 @@ public class MyLine extends Line implements Cloneable {
     private double fromX, fromY, lastTranslateX, lastTranslateY;
     private String InitTool;
 
+    /**
+     * 无参构造函数
+     * 设置图形的事件响应器
+     */
     public MyLine() {
         super();
         setCursor(HAND);
@@ -61,7 +65,10 @@ public class MyLine extends Line implements Cloneable {
         setEndX(x2);
         setEndY(y2);
     }
-
+    /**
+     * 重载克隆函数
+     * @return 当前Node的克隆
+     */
     @Override
     public Node clone() {
         MyLine clone = new MyLine();
@@ -75,7 +82,10 @@ public class MyLine extends Line implements Cloneable {
         clone.setStroke(getStroke());
         return clone;
     }
-
+    /**
+     * 重载toString函数，用于保存信息持久化
+     * @return 属性信息
+     */
     @Override
     public String toString() {
         return new StringBuilder("Line")

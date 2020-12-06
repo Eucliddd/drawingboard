@@ -19,6 +19,9 @@ import java.io.IOException;
 
 
 public class FileExport {
+    /**
+     * 要保存的图形组
+     */
     private Group savingGroup;
 
     public FileExport() {
@@ -28,6 +31,10 @@ public class FileExport {
         savingGroup = gp;
     }
 
+    /**
+     * 设置组
+     * @param gp 设置{@link #savingGroup}
+     */
     public void setGroup(Group gp) {
         savingGroup = gp;
     }
@@ -35,7 +42,6 @@ public class FileExport {
     /**
      * 导出为png图片
      */
-
     public void export() {
         FileChooser fc = new FileChooser();
         fc.setTitle("Save");

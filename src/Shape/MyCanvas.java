@@ -15,6 +15,9 @@ import java.util.ArrayList;
  * @author 眭永熙
  */
 public class MyCanvas extends Canvas implements Cloneable {
+    /**
+     * 橡皮路径
+     */
     private ArrayList<String> path;
 
     public MyCanvas(double width, double height) {
@@ -23,11 +26,18 @@ public class MyCanvas extends Canvas implements Cloneable {
         getGraphicsContext2D().setFill(Color.TRANSPARENT);
     }
 
+    /**
+     * 新增将橡皮路径点
+     * @param to 新的路径点
+     */
     public void addPath(String to) {
         path.add(to);
     }
 
-
+    /**
+     * 重载克隆函数
+     * @return 当前Node的克隆
+     */
     @Override
     public Node clone() {
         MyCanvas clone = new MyCanvas(getWidth(), getHeight());
@@ -48,6 +58,10 @@ public class MyCanvas extends Canvas implements Cloneable {
         return clone;
     }
 
+    /**
+     * 重载toString函数，用于保存信息持久化
+     * @return 属性信息
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Canvas");

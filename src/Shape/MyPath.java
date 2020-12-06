@@ -22,6 +22,12 @@ import static javafx.scene.Cursor.MOVE;
 public class MyPath extends Path implements Cloneable {
     private double fromX, fromY, lastTranslateX, lastTranslateY;
 
+    /**
+     * 构造函数
+     * 设置图形的事件响应器
+     * @param x 初始位置x
+     * @param y 初始位置y
+     */
     public MyPath(double x, double y) {
         super();
         getElements().add(new MoveTo(x, y));
@@ -67,7 +73,10 @@ public class MyPath extends Path implements Cloneable {
         setStroke(ShapeAttribute.getStrokeColor());
         getElements().add(new LineTo(x, y));
     }
-
+    /**
+     * 重载克隆函数
+     * @return 当前Node的克隆
+     */
     @Override
     public Node clone() {
         MyPath clone = new MyPath(0, 0);
@@ -80,7 +89,10 @@ public class MyPath extends Path implements Cloneable {
         clone.setFill(getFill());
         return clone;
     }
-
+    /**
+     * 重载toString函数，用于保存信息持久化
+     * @return 属性信息
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

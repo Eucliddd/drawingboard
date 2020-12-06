@@ -6,6 +6,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="file://$USER_HOME$/.jdks/javafx-sdk-15.0.1/lib" />
+      <root url="jar://$USER_HOME$/.jdks/javafx-sdk-15.0.1/lib/src.zip!/javafx.controls" />
     </SOURCES>
     <jarDirectory url="file://$USER_HOME$/.jdks/javafx-sdk-15.0.1/lib" recursive="false" />
     <jarDirectory url="file://$USER_HOME$/.jdks/javafx-sdk-15.0.1/lib" recursive="false" type="SOURCES" />

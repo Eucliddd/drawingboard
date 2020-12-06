@@ -18,8 +18,14 @@ import static javafx.scene.Cursor.MOVE;
  */
 public class MyQuadCurve extends QuadCurve implements Cloneable {
     private double fromX, fromY, lastTranslateX, lastTranslateY;
+    /**
+     * {@link #isChangeControl()}是否正在改变曲线形状
+     */
     private static boolean changeControl = false;
-
+    /**
+     * 无参构造函数
+     * 设置图形的事件响应器
+     */
     public MyQuadCurve() {
         super();
         setCursor(HAND);
@@ -82,10 +88,17 @@ public class MyQuadCurve extends QuadCurve implements Cloneable {
         }
     }
 
+    /**
+     * {@link #changeControl}
+     * @return boolean
+     */
     public static boolean isChangeControl() {
         return changeControl;
     }
-
+    /**
+     * 重载克隆函数
+     * @return 当前Node的克隆
+     */
     @Override
     public Node clone() {
         MyQuadCurve clone = new MyQuadCurve();
@@ -102,7 +115,10 @@ public class MyQuadCurve extends QuadCurve implements Cloneable {
         clone.setFill(getFill());
         return clone;
     }
-
+    /**
+     * 重载toString函数，用于保存信息持久化
+     * @return 属性信息
+     */
     @Override
     public String toString() {
         return new StringBuilder("Curve")

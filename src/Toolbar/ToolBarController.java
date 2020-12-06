@@ -19,32 +19,71 @@ import javafx.scene.image.ImageView;
  * @author 眭永熙
  */
 public class ToolBarController {
+    /**
+     * 画笔按钮
+     */
     @FXML
     private Button PenBtn;
+    /**
+     * 直线按钮
+     */
     @FXML
     private Button LineBtn;
+    /**
+     * 椭圆按钮
+     */
     @FXML
     private Button OvalBtn;
+    /**
+     * 矩形按钮
+     */
     @FXML
     private Button RectBtn;
+    /**
+     * 移动按钮
+     */
     @FXML
     private Button MoveBtn;
+    /**
+     * 橡皮按钮
+     */
     @FXML
     private Button RubberBtn;
+    /**
+     * 油漆桶按钮
+     */
     @FXML
     private Button BarrelBtn;
+    /**
+     * 曲线按钮
+     */
     @FXML
     private Button CurveBtn;
+    /**
+     * 文本按钮
+     */
     @FXML
     private Button TextBtn;
+    /**
+     * 拖动栏
+     */
     @FXML
     private Slider SizeSlider;
     @FXML
     private Label label;
+    /**
+     * 画笔颜色选择器
+     */
     @FXML
     private ColorPicker StrokeCP;
+    /**
+     * 填充颜色选择器
+     */
     @FXML
     private ColorPicker FillCP;
+    /**
+     * 圆按钮
+     */
     @FXML
     private Button CircleBtn;
 
@@ -54,6 +93,9 @@ public class ToolBarController {
     public ToolBarController() {
     }
 
+    /**
+     * 初始化各按钮功能
+     */
     @FXML
     private void initialize() {
         SizeSlider.setValue(ShapeAttribute.getSize());
@@ -122,6 +164,11 @@ public class ToolBarController {
         this.app = appApp;
     }
 
+    /**
+     * 设置按钮图标
+     * @param path 图标路径
+     * @param btn 按钮
+     */
     private void setIcon(String path,Button btn) {
         Image image = new Image(path);
         ImageView imageView = new ImageView(image);

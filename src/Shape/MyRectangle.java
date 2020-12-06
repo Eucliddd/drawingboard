@@ -18,7 +18,10 @@ import static javafx.scene.Cursor.MOVE;
  */
 public class MyRectangle extends Rectangle implements Cloneable {
     private double fromX, fromY, lastTranslateX, lastTranslateY;
-
+    /**
+     * 无参构造函数
+     * 设置图形的事件响应器
+     */
     public MyRectangle() {
         super();
         setCursor(HAND);
@@ -71,7 +74,10 @@ public class MyRectangle extends Rectangle implements Cloneable {
         setHeight(Math.abs(y1 - y2));
         setWidth(Math.abs(x1 - x2));
     }
-
+    /**
+     * 重载克隆函数
+     * @return 当前Node的克隆
+     */
     @Override
     public Node clone() {
         MyRectangle clone = new MyRectangle();
@@ -86,7 +92,10 @@ public class MyRectangle extends Rectangle implements Cloneable {
         clone.setFill(getFill());
         return clone;
     }
-
+    /**
+     * 重载toString函数，用于保存信息持久化
+     * @return 属性信息
+     */
     @Override
     public String toString() {
         return new StringBuilder("Rectangle")

@@ -15,6 +15,9 @@ import java.io.IOException;
  * @author 眭永熙
  */
 public class FileSave {
+    /**
+     * 要保存的图形组
+     */
     private Group savingGroup;
 
     public FileSave() {
@@ -24,6 +27,10 @@ public class FileSave {
         savingGroup = gp;
     }
 
+    /**
+     * 设置组
+     * @param gp 设置{@link #savingGroup}
+     */
     public void setGroup(Group gp) {
         savingGroup = gp;
     }

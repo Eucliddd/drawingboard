@@ -1,0 +1,2 @@
+本项目使用idea开发
+需要正确配置idea-javafx环境

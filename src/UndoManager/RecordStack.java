@@ -13,8 +13,14 @@ import java.util.Stack;
  */
 public class RecordStack {
 
+    /**
+     * 图形组
+     */
     private static Group group;
 
+    /**
+     * 操作记录栈
+     */
     private static Stack<Record> stack = new Stack<Record>();
     ;
 
@@ -27,6 +33,10 @@ public class RecordStack {
         stack = new Stack<Record>();
     }
 
+    /**
+     * 设置{@link #group}
+     * @param gp group
+     */
     public static void setGroup(Group gp) {
         group = gp;
     }

@@ -15,6 +15,9 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
 import App.ShapeAttribute;
+
+import java.io.*;
+
 /**
  * @see MenuBarController
  * 菜单栏控制器
@@ -31,24 +34,48 @@ public class MenuBarController {
         this.app = appApp;
     }
 
+    /**
+     * 保存选项卡
+     */
     @FXML
     private MenuItem saveItem;
+    /**
+     * 导出选项卡
+     */
     @FXML
     private MenuItem exportItem;
+    /**
+     * 打开选项卡
+     */
     @FXML
     private MenuItem openItem;
+    /**
+     * 导入选项卡
+     */
     @FXML
     private MenuItem inportItem;
+    /**
+     * 撤销选项卡
+     */
     @FXML
     private MenuItem undoItem;
+    /**
+     * 重做选项卡
+     */
     @FXML
     private MenuItem clearItem;
+    /**
+     * 关于选项卡
+     */
     @FXML
     private MenuItem aboutItem;
-/*    @FXML
-    private MenuItem newItem;*/
+    @FXML
+    private MenuItem helpItem;
 
 
+    /**
+     * 初始化各选项卡的功能
+     */
     @FXML
     private void initialize() {
         saveItem.setOnAction(e -> {
@@ -102,6 +129,27 @@ public class MenuBarController {
             aboutAlert.setHeaderText("java大作业");
             aboutAlert.initStyle(StageStyle.UTILITY);
             aboutAlert.setContentText("东北大学：眭永熙 20184411， 刘荣江 20184539");
+            aboutAlert.showAndWait();
+        });
+        helpItem.setOnAction(e -> {
+            Alert aboutAlert = new Alert(Alert.AlertType.INFORMATION);
+            aboutAlert.setTitle("help");
+            aboutAlert.setHeaderText("如何使用");
+            aboutAlert.initStyle(StageStyle.UTILITY);
+            File file=new File("src/helptext.txt");
+            StringBuilder text= new StringBuilder();
+            try {
+                BufferedReader br = new BufferedReader(new FileReader(file));
+                String line = null;
+                while ((line = br.readLine()) != null) {
+                    assert false;
+                    text.append(line).append('\n');
+                }
+            } catch (IOException fileNotFoundException) {
+                fileNotFoundException.printStackTrace();
+            }
+            assert false;
+            aboutAlert.setContentText(text.toString());
             aboutAlert.showAndWait();
         });
     }
